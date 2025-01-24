@@ -24,6 +24,8 @@ public class GameManager : MonoBehaviour
 
     // Game time counter (in seconds, updated every frame)
     public float gameTime = 0f;
+    [SerializeField] private float levelDuration;
+    [SerializeField] private ScoreData scoreData;
 
     // Internal counter to track when to apply the 7-second adjustment rule
     private float timeSinceLastAdjustment = 0f;
@@ -50,13 +52,22 @@ public class GameManager : MonoBehaviour
     private void UpdateLives()
     {
         livesText.text = $"Lives: {currentLives}";
-        if(currentLives <= 0) print("Dead");
+        if (currentLives <= 0)
+        {
+            scoreData.timeLeftOnStage = levelDuration - gameTime;
+            print("Dead");
+        }
     }
 
     private void Update()
     {
         // Update game time
         gameTime += Time.deltaTime;
+        if (gameTime >= levelDuration)
+        {
+            scoreData.timeLeftOnStage = 0;
+            print("win");
+        }
 
         // Update the time since the last adjustment
         timeSinceLastAdjustment += Time.deltaTime;
