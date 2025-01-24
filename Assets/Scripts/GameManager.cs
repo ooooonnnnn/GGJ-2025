@@ -130,12 +130,12 @@ public class GameManager : MonoBehaviour
         if (customer != null)
         {
             leftBeforeCompletion++; // Increment the counter for customers who left before order completion
-            Debug.Log("Customer left before completing the order.");
+            // Debug.Log("Customer left before completing the order.");
 
             // Destroy the customer object
             Destroy(customer);
 
-            currentLives--;
+            currentLives = currentLives > 0 ? currentLives - 1 : 0;
             UpdateLives();
         }
 
