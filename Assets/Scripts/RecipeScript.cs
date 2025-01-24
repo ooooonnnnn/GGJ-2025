@@ -68,3 +68,5 @@ public class Recipe
 
     public Recipe(){}
 }
+// -1 means not defined
+// 0,1,2 correspond to each specific option
