@@ -10,19 +10,49 @@ public class GameManager : MonoBehaviour
     // Prefab for the customer
     public GameObject customerPrefab;
 
-    // Maximum wait time for a customer before disappearing (in seconds)
-    public float customerWaitTime = 30f;
+    // Customer wait time starts at 12 seconds and decreases every 7 seconds
+    public float customerWaitTime = 12f;
 
-    // Dictionary to track active customers and their spawn points
+    // Spawn interval starts at 8 seconds and increases every 7 seconds
+    public float spawnInterval = 8f;
+
+    // Game time counter (in seconds, updated every frame)
+    public float gameTime = 0f;
+
+    // Internal counter to track when to apply the 7-second adjustment rule
+    private float timeSinceLastAdjustment = 0f;
+
+    // Track active customers and their spawn points
     private Dictionary<Transform, GameObject> activeCustomers = new Dictionary<Transform, GameObject>();
 
-    // Time interval between spawning new customers (in seconds)
-    public float spawnInterval = 5f;
+    // Counters for customer tracking
+    public int leftBeforeCompletion = 0; // Customers who left before order completion
+    public int leftAfterCompletion = 0;  // Customers who left after order completion
+    public int totalCustomers = 0;       // Total number of customers who appeared in the restaurant
+
+    public int diffcultyChangeTime = 30; // The time changed the diffcilty 
+    
 
     private void Start()
     {
         // Start the coroutine responsible for spawning customers
         StartCoroutine(SpawnCustomers());
+    }
+
+    private void Update()
+    {
+        // Update game time
+        gameTime += Time.deltaTime;
+
+        // Update the time since the last adjustment
+        timeSinceLastAdjustment += Time.deltaTime;
+
+        // Every 7 seconds, adjust spawn interval and customer wait time
+        if (timeSinceLastAdjustment >= diffcultyChangeTime)
+        {
+            AdjustSpawnAndWaitTimes();
+            timeSinceLastAdjustment = 0f; // Reset the adjustment timer
+        }
     }
 
     private IEnumerator SpawnCustomers()
@@ -31,7 +61,7 @@ public class GameManager : MonoBehaviour
         {
             // Try to spawn a customer at a free spawn point
             SpawnCustomer();
-            // Wait before attempting the next spawn
+            // Wait for the current spawn interval
             yield return new WaitForSeconds(spawnInterval);
         }
     }
@@ -43,6 +73,9 @@ public class GameManager : MonoBehaviour
 
         if (freeSpawnPoint != null)
         {
+            // Increment the total customers counter
+            totalCustomers++;
+
             // Instantiate a new customer at the free spawn point
             GameObject newCustomer = Instantiate(customerPrefab, freeSpawnPoint.position, Quaternion.identity);
 
@@ -76,9 +109,24 @@ public class GameManager : MonoBehaviour
         // Wait for the specified customer wait time
         yield return new WaitForSeconds(customerWaitTime);
 
-        // If the customer still exists, destroy it
+        // Check if the customer is still present
         if (customer != null)
         {
+            // Simulate whether the order was completed or not
+            bool orderCompleted = Random.value > 0.5f; // Randomly decide if the order was completed
+
+            if (orderCompleted)
+            {
+                leftAfterCompletion++; // Increment the counter for customers who left after order completion
+                Debug.Log("Customer left after completing the order.");
+            }
+            else
+            {
+                leftBeforeCompletion++; // Increment the counter for customers who left before order completion
+                Debug.Log("Customer left before completing the order.");
+            }
+
+            // Destroy the customer object
             Destroy(customer);
         }
 
@@ -87,5 +135,16 @@ public class GameManager : MonoBehaviour
         {
             activeCustomers.Remove(spawnPoint);
         }
+    }
+
+    private void AdjustSpawnAndWaitTimes()
+    {
+        // Decrease customer wait time by 2 seconds (minimum 1 seconds)
+        customerWaitTime = Mathf.Max(2f, customerWaitTime - 1f);
+
+        // Decrease spawn interval by 5 seconds
+        spawnInterval -= 0.5f;
+
+        Debug.Log($"Adjusted Times - Spawn Interval: {spawnInterval}, Customer Wait Time: {customerWaitTime}");
     }
 }
