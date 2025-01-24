@@ -2297,8 +2297,13 @@ MonoBehaviour:
   - {fileID: 1058448533}
   - {fileID: 1659139573}
   customerPrefab: {fileID: 6846899330378011042, guid: 21ebefdec8961064cb744dbb4e709b40, type: 3}
-  customerWaitTime: 12
-  spawnInterval: 3
+  customerWaitTime: 30
+  spawnInterval: 10
+  gameTime: 0
+  leftBeforeCompletion: 0
+  leftAfterCompletion: 0
+  totalCustomers: 0
+  diffcultyChangeTime: 30
 --- !u!4 &1911243611
 Transform:
   m_ObjectHideFlags: 0
