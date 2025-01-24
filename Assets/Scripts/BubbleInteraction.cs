@@ -1,11 +1,16 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Mathematics;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class BubbleInteraction : MonoBehaviour
 {
     [SerializeField] private BubbleGraphics graphics;
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioClip[] popClips;
+    [SerializeField] private GameObject graphicsGO;
     
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -21,6 +26,10 @@ public class BubbleInteraction : MonoBehaviour
         
         //play pop sound
         print("pop");
-        Destroy(this.gameObject);
+        AudioClip clip = popClips[Random.Range(0, popClips.Length)];
+        audioSource.pitch = math.exp(Random.Range(-0.2f, 0.2f));
+        audioSource.PlayOneShot(clip);
+        Destroy(graphicsGO);
+        Destroy(gameObject,3f);
     }
 }

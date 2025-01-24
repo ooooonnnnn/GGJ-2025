@@ -12,12 +12,16 @@ public class SubmitRecipe : MonoBehaviour
     [SerializeField] private GameObject bubblePrefab;
     [SerializeField] private float[] initAngleRange;
     [SerializeField] private float[] initSpeedRange;
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioClip clip;
 
     private void OnMouseDown()
     {
         if (GenerateBubble())
         {
             print("blub");
+            audioSource.pitch = math.exp(Random.Range(-0.2f, 0.2f));
+            audioSource.PlayOneShot(clip);
         }
     }
 
@@ -25,7 +29,7 @@ public class SubmitRecipe : MonoBehaviour
     private bool GenerateBubble()
     {
         Recipe recipeForBubble = recipe.OutputRecipe();
-        if (recipeForBubble == null)
+        if (recipeForBubble.size == -1)
         {
             return false;
         }

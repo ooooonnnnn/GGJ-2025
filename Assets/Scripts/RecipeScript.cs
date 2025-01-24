@@ -8,7 +8,7 @@ public class RecipeScript : MonoBehaviour
 {
     // [SerializeField] private int maxNumIngredients;
     [SerializeField] private BubbleGraphics preview;
-    private Recipe recipe;
+    private Recipe recipe = new Recipe();
     
     public void SetSize(int size)
     {

@@ -162,6 +162,6 @@ public class GameManager : MonoBehaviour
         // Decrease spawn interval by 5 seconds
         spawnInterval -= 0.5f;
 
-        Debug.Log($"Adjusted Times - Spawn Interval: {spawnInterval}, Customer Wait Time: {customerWaitTime}");
+        // Debug.Log($"Adjusted Times - Spawn Interval: {spawnInterval}, Customer Wait Time: {customerWaitTime}");
     }
 }
