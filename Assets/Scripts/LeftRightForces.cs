@@ -13,7 +13,7 @@ public class LeftRightForces : MonoBehaviour
     // [SerializeField] private float holdTimeThreshold;
     [SerializeField] private float forceStrength;
     [SerializeField] [Range(0f,1f)] private float forceUpRatio;
-
+    
     private int currentForceDirection = 0;
     private float forceTimer = 0;
     private bool applyForce;
