@@ -13,6 +13,7 @@ public class LeftRightForces : MonoBehaviour
     // [SerializeField] private float holdTimeThreshold;
     [SerializeField] private float forceStrength;
     [SerializeField] [Range(0f,1f)] private float forceUpRatio;
+    public bool controllable = true;
     
     private int currentForceDirection = 0;
     private float forceTimer = 0;
@@ -46,7 +47,7 @@ public class LeftRightForces : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (applyForce)
+        if (applyForce && controllable)
         {
             rb.AddForce(forceStrength * new Vector2(currentForceDirection, forceUpRatio));
         }

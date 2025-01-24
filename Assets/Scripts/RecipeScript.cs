@@ -37,7 +37,7 @@ public class RecipeScript : MonoBehaviour
 
     public Recipe OutputRecipe()
     {
-        Recipe output = new Recipe(recipe);
+        Recipe output = recipe == null ? recipe : new Recipe(recipe);
         recipe = null;
         return output;
     }
