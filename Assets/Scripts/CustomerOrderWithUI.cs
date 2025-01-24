@@ -153,15 +153,15 @@ public class CustomerOrderWithUI : MonoBehaviour
         switch(recipe.color){
             case 0:
             redColorIcon.enabled = true;
-            Debug.Log("Here");
+            // Debug.Log("Here");
             break;
             case 1:
             blueColorIcon.enabled = true;
-            Debug.Log("Here");
+            // Debug.Log("Here");
             break;
             case 2:
             pinkColorIcon.enabled = true;
-            Debug.Log("Here");
+            // Debug.Log("Here");
             break;
         }
 

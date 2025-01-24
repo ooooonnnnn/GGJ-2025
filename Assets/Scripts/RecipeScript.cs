@@ -67,6 +67,13 @@ public class Recipe
     }
 
     public Recipe(){}
+
+    public static bool Equal(Recipe thisOne, Recipe otherOne)
+    {
+        return thisOne.size == otherOne.size &&
+               thisOne.color == otherOne.color &&
+               thisOne.sparkles == otherOne.sparkles;
+    }
 }
 // -1 means not defined
 // 0,1,2 correspond to each specific option

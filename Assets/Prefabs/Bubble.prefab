@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8556339090894954527}
   - component: {fileID: 2957968683573730647}
   - component: {fileID: 2752806597288693275}
+  - component: {fileID: 3613853255397953107}
   m_Layer: 0
   m_Name: Bubble
   m_TagString: Untagged
@@ -144,6 +145,19 @@ MonoBehaviour:
   - {fileID: 7482667652216324306, guid: b7eb70013c9bc334dbbd2517b67af89d, type: 3}
   defaultColor: {fileID: -2413806693520163455, guid: 7417265d51ce7d84ab69e33ffe80ed3b, type: 3}
   defaultSparkles: {fileID: 7482667652216324306, guid: b7eb70013c9bc334dbbd2517b67af89d, type: 3}
+--- !u!114 &3613853255397953107
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1726265431189359276}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df3bc2059e94fd8409c2b464747c4e3d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  graphics: {fileID: 2752806597288693275}
 --- !u!1 &6638988238424881123
 GameObject:
   m_ObjectHideFlags: 0
