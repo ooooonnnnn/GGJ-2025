@@ -136,15 +136,15 @@ MonoBehaviour:
   - 1
   - 2
   colorSprites:
-  - {fileID: -2413806693520163455, guid: 7417265d51ce7d84ab69e33ffe80ed3b, type: 3}
-  - {fileID: -2413806693520163455, guid: 7417265d51ce7d84ab69e33ffe80ed3b, type: 3}
-  - {fileID: -2413806693520163455, guid: 7417265d51ce7d84ab69e33ffe80ed3b, type: 3}
+  - {fileID: 21300000, guid: 8c503ae0c86230a4181de07e1be281f6, type: 3}
+  - {fileID: 21300000, guid: 3e0ad8ba0dafe824e9ce76fd4bcc09f1, type: 3}
+  - {fileID: 21300000, guid: c07e5280f7063c94a98104fd95e6cf57, type: 3}
   sparkleSprites:
-  - {fileID: 7482667652216324306, guid: b7eb70013c9bc334dbbd2517b67af89d, type: 3}
-  - {fileID: 7482667652216324306, guid: b7eb70013c9bc334dbbd2517b67af89d, type: 3}
-  - {fileID: 7482667652216324306, guid: b7eb70013c9bc334dbbd2517b67af89d, type: 3}
-  defaultColor: {fileID: -2413806693520163455, guid: 7417265d51ce7d84ab69e33ffe80ed3b, type: 3}
-  defaultSparkles: {fileID: 7482667652216324306, guid: b7eb70013c9bc334dbbd2517b67af89d, type: 3}
+  - {fileID: 21300000, guid: 8120dd028d37efd4ea302fdb64be65ff, type: 3}
+  - {fileID: 21300000, guid: 351c272b507206e41abce68f394249ff, type: 3}
+  - {fileID: 21300000, guid: 9fea30cb5b65d8040a01ae7617fdf082, type: 3}
+  defaultColor: {fileID: 21300000, guid: 62950fc94103ce4408713880270f7f25, type: 3}
+  defaultSparkles: {fileID: 21300000, guid: 6b7be979584a0c540858a98a3e5a8c87, type: 3}
 --- !u!114 &3613853255397953107
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -449,7 +449,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 3
   m_Sprite: {fileID: 0}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
