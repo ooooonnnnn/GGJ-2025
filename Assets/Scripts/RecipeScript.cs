@@ -6,39 +6,45 @@ using System.Linq;
 
 public class RecipeScript : MonoBehaviour
 {
-    [SerializeField] private int maxNumIngredients;
+    // [SerializeField] private int maxNumIngredients;
+    [SerializeField] private BubbleGraphics preview;
     private Recipe recipe;
     
     public void SetSize(int size)
     {
         recipe = new Recipe();
         recipe.size = size;
+        
+        preview.SetRecipe(recipe);
     }
 
     public void SetColor(int color)
     {
-        if (recipe == null)
+        if (recipe.size == -1)
         {
             return;
         }
-
         recipe.color = color;
+        
+        preview.SetRecipe(recipe);
     }
 
     public void SetSparkles(int sparkles)
     {
-        if (recipe == null)
+        if (recipe.size == -1)
         {
             return;
         }
-
         recipe.sparkles = sparkles;
+        
+        preview.SetRecipe(recipe);
     }
 
     public Recipe OutputRecipe()
     {
         Recipe output = recipe == null ? recipe : new Recipe(recipe);
-        recipe = null;
+        recipe = new Recipe();
+        preview.SetRecipe(recipe);
         return output;
     }
 // private void Update()

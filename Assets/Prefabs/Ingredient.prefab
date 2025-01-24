@@ -53,7 +53,7 @@ BoxCollider2D:
   m_LayerOverridePriority: 0
   m_ForceSendLayers:
     serializedVersion: 2
-    m_Bits: 4294967295
+    m_Bits: 0
   m_ForceReceiveLayers:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -91,6 +91,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6056e9ff3bfc2d242bdf186d9e58db4f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  recipe: {fileID: 0}
+  ingredientNum: 0
+  type: 0
 --- !u!1 &1633034750747030573
 GameObject:
   m_ObjectHideFlags: 0
