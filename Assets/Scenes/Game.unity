@@ -1709,6 +1709,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa748c080fa9aef48bf2daa1a614b3a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timeLeftOnStage: 0
 --- !u!114 &1148453139
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2720,7 +2721,8 @@ MonoBehaviour:
   customerWaitTime: 30
   spawnInterval: 10
   gameTime: 0
-  levelDuration: 0
+  levelDuration: 100
+  scoreData: {fileID: 0}
   leftBeforeCompletion: 0
   leftAfterCompletion: 0
   totalCustomers: 0
