@@ -16,7 +16,7 @@ public class BubbleInteraction : MonoBehaviour
         //       $"his recipe: {customer.recipe.size}, {customer.recipe.color}, {customer.recipe.sparkles}");
         if (Recipe.Equal(order.recipe, graphics.recipe))
         {
-            customerGO.GetComponent<CustomerInteraction>().Satisfied();
+            customerGO.GetComponent<CustomerReaction>().Satisfied();
         }
         
         //play pop sound

@@ -77,7 +77,10 @@ public class GameManager : MonoBehaviour
             totalCustomers++;
 
             // Instantiate a new customer at the free spawn point
-            GameObject newCustomer = Instantiate(customerPrefab, freeSpawnPoint.position, Quaternion.identity);
+            GameObject newCustomer = Instantiate(customerPrefab, freeSpawnPoint);
+            CustomerReaction newCustomerReaction = newCustomer.GetComponent<CustomerReaction>();
+            newCustomerReaction.gameManager = this;
+            newCustomerReaction.parentTransform = freeSpawnPoint;
 
             // Add the customer to the active customers dictionary
             activeCustomers[freeSpawnPoint] = newCustomer;
@@ -112,19 +115,8 @@ public class GameManager : MonoBehaviour
         // Check if the customer is still present
         if (customer != null)
         {
-            // Simulate whether the order was completed or not
-            bool orderCompleted = Random.value > 0.5f; // Randomly decide if the order was completed
-
-            if (orderCompleted)
-            {
-                leftAfterCompletion++; // Increment the counter for customers who left after order completion
-                Debug.Log("Customer left after completing the order.");
-            }
-            else
-            {
-                leftBeforeCompletion++; // Increment the counter for customers who left before order completion
-                Debug.Log("Customer left before completing the order.");
-            }
+            leftBeforeCompletion++; // Increment the counter for customers who left before order completion
+            Debug.Log("Customer left before completing the order.");
 
             // Destroy the customer object
             Destroy(customer);
@@ -135,6 +127,13 @@ public class GameManager : MonoBehaviour
         {
             activeCustomers.Remove(spawnPoint);
         }
+    }
+
+    public void RemoveSatisfiedCustomer(Transform key)
+    {
+        Destroy(activeCustomers[key]);
+        activeCustomers.Remove(key);
+        leftAfterCompletion++;
     }
 
     private void AdjustSpawnAndWaitTimes()
