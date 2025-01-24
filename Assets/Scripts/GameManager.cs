@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.Serialization;
 
 public class GameManager : MonoBehaviour
@@ -54,9 +55,14 @@ public class GameManager : MonoBehaviour
         livesText.text = $"Lives: {currentLives}";
         if (currentLives <= 0)
         {
-            scoreData.timeLeftOnStage = levelDuration - gameTime;
-            print("Dead");
+            EndLevel();
         }
+    }
+
+    void EndLevel()
+    {
+        scoreData.timeLeftOnStage = levelDuration - gameTime;
+        SceneManager.LoadScene("End Screen");
     }
 
     private void Update()
@@ -65,8 +71,7 @@ public class GameManager : MonoBehaviour
         gameTime += Time.deltaTime;
         if (gameTime >= levelDuration)
         {
-            scoreData.timeLeftOnStage = 0;
-            print("win");
+            EndLevel();
         }
 
         // Update the time since the last adjustment

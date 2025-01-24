@@ -1692,7 +1692,7 @@ GameObject:
   - component: {fileID: 1148453138}
   m_Layer: 0
   m_Name: Score Data
-  m_TagString: Untagged
+  m_TagString: Score Data
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2722,7 +2722,7 @@ MonoBehaviour:
   spawnInterval: 10
   gameTime: 0
   levelDuration: 100
-  scoreData: {fileID: 0}
+  scoreData: {fileID: 1148453138}
   leftBeforeCompletion: 0
   leftAfterCompletion: 0
   totalCustomers: 0
