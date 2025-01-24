@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class GameManager : MonoBehaviour
 {
@@ -10,6 +12,10 @@ public class GameManager : MonoBehaviour
     // Prefab for the customer
     public GameObject customerPrefab;
 
+    [SerializeField] private TMP_Text livesText;
+    [FormerlySerializedAs("startingLife")] [SerializeField] private int startingLives;
+    private int currentLives;
+    
     // Customer wait time starts at 12 seconds and decreases every 7 seconds
     public float customerWaitTime = 12f;
 
@@ -37,6 +43,14 @@ public class GameManager : MonoBehaviour
     {
         // Start the coroutine responsible for spawning customers
         StartCoroutine(SpawnCustomers());
+        currentLives = startingLives;
+        UpdateLives();
+    }
+
+    private void UpdateLives()
+    {
+        livesText.text = $"Lives: {currentLives}";
+        if(currentLives <= 0) print("Dead");
     }
 
     private void Update()
@@ -120,6 +134,9 @@ public class GameManager : MonoBehaviour
 
             // Destroy the customer object
             Destroy(customer);
+
+            currentLives--;
+            UpdateLives();
         }
 
         // Remove the spawn point from the active customers dictionary
@@ -134,6 +151,7 @@ public class GameManager : MonoBehaviour
         Destroy(activeCustomers[key]);
         activeCustomers.Remove(key);
         leftAfterCompletion++;
+        
     }
 
     private void AdjustSpawnAndWaitTimes()
