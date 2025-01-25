@@ -61,6 +61,7 @@ public class GameManager : MonoBehaviour
 
     void EndLevel()
     {
+        scoreData = GameObject.FindWithTag("Score Data").GetComponent<ScoreData>();
         scoreData.timeLeftOnStage = levelDuration - gameTime;
         SceneManager.LoadScene("End Screen");
     }
