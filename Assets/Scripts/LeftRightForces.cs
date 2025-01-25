@@ -21,7 +21,7 @@ public class LeftRightForces : MonoBehaviour
     // private float keyHoldTimer = 0;
     private void Update()
     {
-        if (!Input.GetKey(KeyCode.RightArrow) && !Input.GetKey(KeyCode.LeftArrow))
+        if (!Input.GetKey(KeyCode.D) && !Input.GetKey(KeyCode.A))
         {
             forceTimer = 0;
             // keyHoldTimer = 0;
@@ -30,13 +30,13 @@ public class LeftRightForces : MonoBehaviour
         applyForce = false;
         if (forceTimer < forceDuration)
         {
-            if (Input.GetKey(KeyCode.RightArrow))
+            if (Input.GetKey(KeyCode.D))
             {
                 forceTimer += Time.deltaTime;
                 currentForceDirection = 1;
                 applyForce = true;
             }
-            else if (Input.GetKey(KeyCode.LeftArrow))
+            else if (Input.GetKey(KeyCode.A))
             {
                 forceTimer += Time.deltaTime;
                 currentForceDirection = -1;
