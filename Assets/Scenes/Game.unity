@@ -514,7 +514,7 @@ Transform:
   m_GameObject: {fileID: 219909498}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 12, y: 0, z: 0}
+  m_LocalPosition: {x: 20, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -584,7 +584,7 @@ Transform:
   m_GameObject: {fileID: 259389286}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3, y: 0, z: 0}
+  m_LocalPosition: {x: 5, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1297,7 +1297,7 @@ Transform:
   m_GameObject: {fileID: 1058448532}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 6, y: 0, z: 0}
+  m_LocalPosition: {x: 101, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1545,11 +1545,11 @@ MonoBehaviour:
   recipe: {fileID: 620402863}
   bubblePrefab: {fileID: 1726265431189359276, guid: 03be6701ee7dd3b459e9a79fe921bd8c, type: 3}
   initAngleRange:
-  - 2.6415
-  - 3.3415
+  - 2.9
+  - 2.91
   initSpeedRange:
-  - 10
-  - 30
+  - 60
+  - 100
   audioSource: {fileID: 1227729816}
   clip: {fileID: 8300000, guid: 34bfd335a16edb349a4a7e6e9086f0f9, type: 3}
 --- !u!82 &1227729816
@@ -2151,7 +2151,7 @@ Transform:
   m_GameObject: {fileID: 1659139572}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 9, y: 0, z: 0}
+  m_LocalPosition: {x: 15, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2422,6 +2422,7 @@ MonoBehaviour:
   - {fileID: 811713350}
   - {fileID: 1058448533}
   - {fileID: 1659139573}
+  - {fileID: 219909499}
   customerPrefab: {fileID: 6846899330378011042, guid: 21ebefdec8961064cb744dbb4e709b40, type: 3}
   livesText: {fileID: 2112727829}
   startingLives: 2
