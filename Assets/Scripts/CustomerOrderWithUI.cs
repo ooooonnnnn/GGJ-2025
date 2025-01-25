@@ -19,7 +19,7 @@ public class CustomerOrderWithUI : MonoBehaviour
     [SerializeField] private SpriteRenderer colorSprite;
     [SerializeField] private SpriteRenderer sparkleSprite;
     [SerializeField] private Sprite[] tickets;
-    [SerializeField] private Sprite[] colorDashes;
+    [SerializeField] private Color[] colorDashes;
     [SerializeField] private Sprite[] sparkleSprites;
 
     // Recipe will be saved as Recipe class (Defined in RecipeScript)
@@ -101,7 +101,7 @@ public class CustomerOrderWithUI : MonoBehaviour
         ticketSprite.sprite = tickets[recipe.size];
         
         // Color
-        colorSprite.sprite = recipe.color == -1 ? null : colorDashes[recipe.color];
+        colorSprite.color = recipe.color == -1 ? new Color(0,0,0,0) : colorDashes[recipe.color];
 
         //Sparkl 
         sparkleSprite.sprite = recipe.sparkles == -1 ? null : sparkleSprites[recipe.sparkles];
