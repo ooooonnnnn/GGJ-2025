@@ -17,8 +17,8 @@ public class BubbleInteraction : MonoBehaviour
         GameObject customerGO = other.gameObject;
         CustomerOrderWithUI order = customerGO.GetComponent<CustomerOrderWithUI>();
         
-        // print($"my recipe: {graphics.recipe.size}, {graphics.recipe.color}, {graphics.recipe.sparkles}\n" +
-        //       $"his recipe: {customer.recipe.size}, {customer.recipe.color}, {customer.recipe.sparkles}");
+        print($"my recipe: {graphics.recipe.size}, {graphics.recipe.color}, {graphics.recipe.sparkles}\n" +
+              $"his recipe: {order.recipe.size}, {order.recipe.color}, {order.recipe.sparkles}");
         if (Recipe.Equal(order.recipe, graphics.recipe))
         {
             customerGO.GetComponent<CustomerReaction>().Satisfied();

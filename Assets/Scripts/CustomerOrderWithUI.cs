@@ -48,6 +48,7 @@ public class CustomerOrderWithUI : MonoBehaviour
         if (hasShampoo)
         {
             int shampooChoice = Random.Range(0, 3);
+            
 
             recipe.color = shampooChoice;
         }
