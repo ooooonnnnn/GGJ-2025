@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CustomerReaction : MonoBehaviour
 {
@@ -16,6 +17,8 @@ public class CustomerReaction : MonoBehaviour
     [SerializeField] private Sprite[] dirtySprites;
     [SerializeField] private Sprite[] cleanSprites;
     private int characterType = -1;
+
+    [SerializeField] private Slider healthbar;
 
     public void Start()
     {
@@ -40,6 +43,8 @@ public class CustomerReaction : MonoBehaviour
                 gameManager.RemoveSatisfiedCustomer(position);
             }
         }
+
+        healthbar.value = 1 - waitTimer / waitTime;
     }
 
     private void Leave()
