@@ -111,12 +111,13 @@ public class GameManager : MonoBehaviour
             CustomerReaction newCustomerReaction = newCustomer.GetComponent<CustomerReaction>();
             newCustomerReaction.gameManager = this;
             newCustomerReaction.position =  freeSpawnPoint;
+            newCustomerReaction.waitTime = customerWaitTime;
 
             // Add the customer to the active customers dictionary
             activeCustomers[freeSpawnPoint] = newCustomer;
 
             // Start a coroutine to remove the customer after a certain wait time
-            StartCoroutine(RemoveCustomerAfterTime(newCustomer, freeSpawnPoint));
+            // StartCoroutine(RemoveCustomerAfterTime(newCustomer, freeSpawnPoint));
         }
         else
         {
@@ -137,10 +138,8 @@ public class GameManager : MonoBehaviour
         return -1; // No free spawn points
     }
 
-    private IEnumerator RemoveCustomerAfterTime(GameObject customer, int spawnPoint)
+    public void RemoveCustomerAfterTime(GameObject customer, int spawnPoint)
     {
-        // Wait for the specified customer wait time
-        yield return new WaitForSeconds(customerWaitTime);
 
         // Check if the customer is still present
         if (customer != null)
