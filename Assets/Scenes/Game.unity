@@ -2243,6 +2243,10 @@ PrefabInstance:
       propertyPath: m_Offset.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5668419928584946538, guid: 57fa525dc7d066b4084e35a8e90a27fc, type: 3}
+      propertyPath: m_LayerOverridePriority
+      value: 120
+      objectReference: {fileID: 0}
     - target: {fileID: 6535654022789893523, guid: 57fa525dc7d066b4084e35a8e90a27fc, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -2644,7 +2648,7 @@ MonoBehaviour:
   livesText: {fileID: 2112727829}
   startingLives: 3
   customerWaitTime: 30
-  spawnInterval: 15
+  spawnInterval: 5
   gameTime: 0
   levelDuration: 180
   scoreData: {fileID: 0}
