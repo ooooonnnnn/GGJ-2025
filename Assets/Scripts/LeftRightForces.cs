@@ -19,6 +19,12 @@ public class LeftRightForces : MonoBehaviour
     private float forceTimer = 0;
     private bool applyForce;
     // private float keyHoldTimer = 0;
+
+    private void Start()
+    {
+        //random angular velocity
+        rb.AddTorque(Random.Range(-1f,1f) * 2, ForceMode2D.Impulse);
+    }
     private void Update()
     {
         if (!Input.GetKey(KeyCode.D) && !Input.GetKey(KeyCode.A))
