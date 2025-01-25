@@ -211,6 +211,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5668419928584946538, guid: 57fa525dc7d066b4084e35a8e90a27fc, type: 3}
+      propertyPath: m_Size.x
+      value: 1.4341626
+      objectReference: {fileID: 0}
+    - target: {fileID: 5668419928584946538, guid: 57fa525dc7d066b4084e35a8e90a27fc, type: 3}
+      propertyPath: m_Offset.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6535654022789893523, guid: 57fa525dc7d066b4084e35a8e90a27fc, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 3659693adc8e1f94fb000db3adbf36f0, type: 3}
     - target: {fileID: 8428814629130252905, guid: 57fa525dc7d066b4084e35a8e90a27fc, type: 3}
       propertyPath: recipe
       value: 
@@ -2400,6 +2412,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5668419928584946538, guid: 57fa525dc7d066b4084e35a8e90a27fc, type: 3}
+      propertyPath: m_Size.x
+      value: 1.4331886
+      objectReference: {fileID: 0}
+    - target: {fileID: 5668419928584946538, guid: 57fa525dc7d066b4084e35a8e90a27fc, type: 3}
+      propertyPath: m_Offset.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6535654022789893523, guid: 57fa525dc7d066b4084e35a8e90a27fc, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: b492dfed0d3cfd74788df9d7599a3ab7, type: 3}
     - target: {fileID: 8428814629130252905, guid: 57fa525dc7d066b4084e35a8e90a27fc, type: 3}
       propertyPath: recipe
       value: 
@@ -2493,6 +2517,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5668419928584946538, guid: 57fa525dc7d066b4084e35a8e90a27fc, type: 3}
+      propertyPath: m_Size.x
+      value: 1.4378566
+      objectReference: {fileID: 0}
+    - target: {fileID: 5668419928584946538, guid: 57fa525dc7d066b4084e35a8e90a27fc, type: 3}
+      propertyPath: m_Offset.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6535654022789893523, guid: 57fa525dc7d066b4084e35a8e90a27fc, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 1d340a8c3510789469b61e22365cfbaf, type: 3}
     - target: {fileID: 8428814629130252905, guid: 57fa525dc7d066b4084e35a8e90a27fc, type: 3}
       propertyPath: recipe
       value: 
