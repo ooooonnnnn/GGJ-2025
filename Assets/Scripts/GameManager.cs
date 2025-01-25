@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour
     public GameObject customerPrefab;
 
     [SerializeField] private TMP_Text livesText;
+    [SerializeField] private TMP_Text timeText;
     [SerializeField] private int startingLives;
     private int currentLives;
     private string livesTextString;
@@ -55,7 +56,7 @@ public class GameManager : MonoBehaviour
     private void UpdateLives()
     {
         
-        livesTextString = $"Lives: {currentLives}";
+        livesText.text = $"Lives: {currentLives}";
         if (currentLives <= 0)
         {
             EndLevel();
@@ -92,7 +93,7 @@ public class GameManager : MonoBehaviour
         int minutes = totalSeconds / 60;
         int seconds = totalSeconds % 60;
         string extraZero = seconds < 10 ? "0" : "";
-        livesText.text = livesTextString + $"\n{minutes}:{extraZero}{seconds}/3:00";
+        timeText.text =$"{minutes}:{extraZero}{seconds}/3:00";
     }
 
     private IEnumerator SpawnCustomers()

@@ -6,10 +6,13 @@ using Unity.Collections;
 using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class EndScreenUI : MonoBehaviour
 {
     [SerializeField] private TMP_Text result;
+    [SerializeField] private GameObject badPlushies;
+    [SerializeField] private GameObject goodPlushies;
     void Start()
     {
         ScoreData scoreData = FindObjectOfType<ScoreData>();
@@ -21,11 +24,19 @@ public class EndScreenUI : MonoBehaviour
             int secs = totalSeconds % 60;
             string extraZero = secs < 10 ? "0" : "";
             result.text = $"You lose... You had {totalSeconds / 60}:{extraZero}{secs} left to win.";
+            UpdatePlushyGraphics(false);
         }
         else
         {
-            result.text = "Congradulations! You did it!";
+            result.text = "CONGRADULATIONS! YOU WON!";
+            UpdatePlushyGraphics(true);
         }
+    }
+
+    private void UpdatePlushyGraphics(bool good)
+    {
+        badPlushies.SetActive(!good);
+        goodPlushies.SetActive(good);
     }
 
     public void Restart()
