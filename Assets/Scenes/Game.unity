@@ -2668,10 +2668,10 @@ MonoBehaviour:
   customerPrefab: {fileID: 6846899330378011042, guid: 21ebefdec8961064cb744dbb4e709b40, type: 3}
   livesText: {fileID: 2112727829}
   startingLives: 2
-  customerWaitTime: 30
-  spawnInterval: 10
+  customerWaitTime: 10
+  spawnInterval: 1
   gameTime: 0
-  levelDuration: 100
+  levelDuration: 59
   scoreData: {fileID: 1148453138}
   leftBeforeCompletion: 0
   leftAfterCompletion: 0

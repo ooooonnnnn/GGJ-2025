@@ -17,8 +17,10 @@ public class EndScreenUI : MonoBehaviour
 
         if (timeLeft > 0)
         {
-            int seconds = (int)Math.Ceiling(timeLeft);
-            result.text = $"You lose... You had {seconds / 60}:{seconds % 60} left to win.";
+            int totalSeconds = (int)Math.Ceiling(timeLeft);
+            int secs = totalSeconds % 60;
+            string extraZero = secs < 10 ? "0" : "";
+            result.text = $"You lose... You had {totalSeconds / 60}:{extraZero}{secs} left to win.";
         }
         else
         {
