@@ -15,13 +15,17 @@ public class SubmitRecipe : MonoBehaviour
     [SerializeField] private AudioSource audioSource;
     [SerializeField] private AudioClip clip;
 
-    private void OnMouseDown()
+    private void Update()
     {
-        if (GenerateBubble())
+
+        if (Input.GetKeyDown(KeyCode.Space))
         {
-            print("blub");
-            audioSource.pitch = math.exp(Random.Range(-0.2f, 0.2f));
-            audioSource.PlayOneShot(clip);
+            if (GenerateBubble())
+            {
+                print("blub");
+                audioSource.pitch = math.exp(Random.Range(-0.2f, 0.2f));
+                audioSource.PlayOneShot(clip);
+            }
         }
     }
 
