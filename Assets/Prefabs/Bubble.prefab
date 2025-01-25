@@ -114,8 +114,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 4392463375030296852}
   forceDuration: 0.25
-  forceStrength: 40
-  forceUpRatio: 0.3
+  forceStrength: 60
+  forceUpRatio: 0.1
   controllable: 1
 --- !u!114 &2752806597288693275
 MonoBehaviour:

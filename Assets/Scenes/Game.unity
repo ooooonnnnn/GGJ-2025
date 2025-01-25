@@ -2860,14 +2860,14 @@ MonoBehaviour:
   timeText: {fileID: 1301354832}
   startingLives: 3
   customerWaitTime: 30
-  spawnInterval: 5
+  spawnInterval: 10
   gameTime: 0
   levelDuration: 180
   scoreData: {fileID: 0}
   leftBeforeCompletion: 0
   leftAfterCompletion: 0
   totalCustomers: 0
-  diffcultyChangeTime: 30
+  diffcultyChangeTime: 15
 --- !u!4 &1911243611
 Transform:
   m_ObjectHideFlags: 0

@@ -12,6 +12,7 @@ public class CustomerReaction : MonoBehaviour
     private float waitTimer = 0;
     private float lingerTimer = 0;
     private bool lingering = false;
+    [SerializeField] private GameObject ticket;
 
     [SerializeField] private SpriteRenderer spriteRenderer;
     [SerializeField] private Sprite[] dirtySprites;
@@ -32,7 +33,11 @@ public class CustomerReaction : MonoBehaviour
         waitTimer += Time.deltaTime;
         if (waitTimer >= waitTime)
         {
-            Leave();
+            if (!lingering)
+            {
+                Leave();
+            }
+
         }
 
         if (lingering)
@@ -58,5 +63,6 @@ public class CustomerReaction : MonoBehaviour
         print("Thanks!!!!!");
         lingering = true;
         spriteRenderer.sprite = cleanSprites[characterType];
+        Destroy(ticket);
     }
 }

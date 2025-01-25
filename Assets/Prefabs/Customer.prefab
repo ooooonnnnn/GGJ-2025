@@ -481,9 +481,9 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 2024ed379db15b24cac1ea7e6886a222, type: 3}
   - {fileID: 21300000, guid: 2aadb247c7e379148b9659002980bec4, type: 3}
   colorDashes:
-  - {r: 0.48235297, g: 0.7607844, b: 0.5764706, a: 1}
-  - {r: 0.8705883, g: 0.6431373, b: 0.4666667, a: 4.2132233e+21}
-  - {r: 0.8745099, g: 0.5882353, b: 0.5882353, a: 1}
+  - {r: 0.48235297, g: 0.72156864, b: 0.227451, a: 1}
+  - {r: 0.854902, g: 0.53333336, b: 0.16470589, a: 1}
+  - {r: 0.86274517, g: 0.427451, b: 0.5372549, a: 1}
   sparkleSprites:
   - {fileID: 21300000, guid: df00bea5828c17849a84897d91dad0bb, type: 3}
   - {fileID: 21300000, guid: 657c329953c46e3448deef2ca30d648d, type: 3}
@@ -504,6 +504,7 @@ MonoBehaviour:
   position: 0
   waitTime: 0
   lingerTime: 1
+  ticket: {fileID: 2768725981684390094}
   spriteRenderer: {fileID: 1560191372061175134}
   dirtySprites:
   - {fileID: 21300000, guid: e73f3a120aa9d3345b46ec84b88e9edc, type: 3}
