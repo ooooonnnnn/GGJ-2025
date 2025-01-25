@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -14,8 +15,9 @@ public class GameManager : MonoBehaviour
     public GameObject customerPrefab;
 
     [SerializeField] private TMP_Text livesText;
-    [FormerlySerializedAs("startingLife")] [SerializeField] private int startingLives;
+    [SerializeField] private int startingLives;
     private int currentLives;
+    private string livesTextString;
     
     // Customer wait time starts at 12 seconds and decreases every 7 seconds
     public float customerWaitTime = 12f;
@@ -52,7 +54,8 @@ public class GameManager : MonoBehaviour
 
     private void UpdateLives()
     {
-        livesText.text = $"Lives: {currentLives}";
+        
+        livesTextString = $"Lives: {currentLives}";
         if (currentLives <= 0)
         {
             EndLevel();
@@ -84,6 +87,12 @@ public class GameManager : MonoBehaviour
             AdjustSpawnAndWaitTimes();
             timeSinceLastAdjustment = 0f; // Reset the adjustment timer
         }
+
+        int totalSeconds = (int)Math.Floor(gameTime);
+        int minutes = totalSeconds / 60;
+        int seconds = totalSeconds % 60;
+        string extraZero = seconds < 10 ? "0" : "";
+        livesText.text = livesTextString + $"\n{minutes}:{extraZero}{seconds}/3:00";
     }
 
     private IEnumerator SpawnCustomers()
