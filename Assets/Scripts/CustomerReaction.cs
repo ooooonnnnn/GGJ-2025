@@ -20,6 +20,7 @@ public class CustomerReaction : MonoBehaviour
     private int characterType = -1;
 
     [SerializeField] private Slider healthbar;
+    [SerializeField] private GameObject healthbarObject;
 
     public void Start()
     {
@@ -31,13 +32,9 @@ public class CustomerReaction : MonoBehaviour
     public void Update()
     {
         waitTimer += Time.deltaTime;
-        if (waitTimer >= waitTime)
+        if (!lingering && waitTimer >= waitTime)
         {
-            if (!lingering)
-            {
-                Leave();
-            }
-
+            Leave();
         }
 
         if (lingering)
@@ -55,12 +52,13 @@ public class CustomerReaction : MonoBehaviour
     private void Leave()
     {
         gameManager.RemoveCustomerAfterTime(gameObject, position);
-    } 
-    
+    }
+
     public void Satisfied()
     {
         //tell the game manager
         print("Thanks!!!!!");
+        healthbarObject.SetActive(false);
         lingering = true;
         spriteRenderer.sprite = cleanSprites[characterType];
         Destroy(ticket);

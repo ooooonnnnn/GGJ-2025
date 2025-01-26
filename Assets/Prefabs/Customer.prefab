@@ -513,6 +513,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 312d14a5815de3e4e9c2557f37d73bb9, type: 3}
   - {fileID: 21300000, guid: fc8c174999a2f8842b1ca928c1cd5f21, type: 3}
   healthbar: {fileID: 2505292197003129839}
+  healthbarObject: {fileID: 6838747197968788960}
 --- !u!61 &5519640676516564978
 BoxCollider2D:
   m_ObjectHideFlags: 0
