@@ -21,14 +21,15 @@ public class EndScreenUI : MonoBehaviour
         if (timeLeft > 0)
         {
             int totalSeconds = (int)Math.Ceiling(timeLeft);
+            totalSeconds = 180 - totalSeconds;
             int secs = totalSeconds % 60;
             string extraZero = secs < 10 ? "0" : "";
-            result.text = $"You lose... You had {totalSeconds / 60}:{extraZero}{secs} left to win.";
+            result.text = $"Fantastic work! You lasted {totalSeconds / 60}:{extraZero}{secs} in the plushie cleaning frenzy. Can you push it even further?";
             UpdatePlushyGraphics(false);
         }
         else
         {
-            result.text = "CONGRADULATIONS! YOU WON!";
+            result.text = "Clean sweep! Every plushie sparkles thanks to you. The plushie kingdom salutes your greatness!";
             UpdatePlushyGraphics(true);
         }
     }

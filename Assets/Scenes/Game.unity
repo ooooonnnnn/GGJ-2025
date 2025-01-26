@@ -2859,7 +2859,7 @@ MonoBehaviour:
   livesText: {fileID: 2112727829}
   timeText: {fileID: 1301354832}
   startingLives: 3
-  customerWaitTime: 30
+  customerWaitTime: 25
   spawnInterval: 10
   gameTime: 0
   levelDuration: 180
@@ -2867,7 +2867,9 @@ MonoBehaviour:
   leftBeforeCompletion: 0
   leftAfterCompletion: 0
   totalCustomers: 0
-  diffcultyChangeTime: 15
+  diffcultyChangeTime: 5
+  customerWaitTimeReductionPerInterval: 0.3
+  customerSpawnIntervalReduction: 0.3
 --- !u!4 &1911243611
 Transform:
   m_ObjectHideFlags: 0

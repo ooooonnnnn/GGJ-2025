@@ -19,7 +19,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private int startingLives;
     private int currentLives;
     private string livesTextString;
-    
+
     // Customer wait time starts at 12 seconds and decreases every 7 seconds
     public float customerWaitTime = 12f;
 
@@ -42,8 +42,12 @@ public class GameManager : MonoBehaviour
     public int leftAfterCompletion = 0;  // Customers who left after order completion
     public int totalCustomers = 0;       // Total number of customers who appeared in the restaurant
 
-    public int diffcultyChangeTime = 30; // The time changed the diffcilty 
-    
+    [Header("Difficulty Balancing Variables")]
+
+    public int diffcultyChangeTime = 30; // The time interval between difficulty increases
+    public float customerWaitTimeReductionPerInterval = 1; // The reduction in time customers will wait before leaving per each difficulty interval
+    public float customerSpawnIntervalReduction = 0.5f; // The reduction in time between each customer spawn
+
 
     private void Start()
     {
@@ -55,7 +59,7 @@ public class GameManager : MonoBehaviour
 
     private void UpdateLives()
     {
-        
+
         livesText.text = $"Lives: {currentLives}";
         if (currentLives <= 0)
         {
@@ -93,7 +97,7 @@ public class GameManager : MonoBehaviour
         int minutes = totalSeconds / 60;
         int seconds = totalSeconds % 60;
         string extraZero = seconds < 10 ? "0" : "";
-        timeText.text =$"{minutes}:{extraZero}{seconds}/3:00";
+        timeText.text = $"{minutes}:{extraZero}{seconds}/3:00";
     }
 
     private IEnumerator SpawnCustomers()
@@ -120,7 +124,7 @@ public class GameManager : MonoBehaviour
             GameObject newCustomer = Instantiate(customerPrefab, spawnPoints[freeSpawnPoint]);
             CustomerReaction newCustomerReaction = newCustomer.GetComponent<CustomerReaction>();
             newCustomerReaction.gameManager = this;
-            newCustomerReaction.position =  freeSpawnPoint;
+            newCustomerReaction.position = freeSpawnPoint;
             newCustomerReaction.waitTime = customerWaitTime;
 
             // Add the customer to the active customers dictionary
@@ -179,20 +183,20 @@ public class GameManager : MonoBehaviour
         //     s.Add($"key: {activeCustomer.Key.name} value: {activeCustomer.Value.name}\n");
         // }
         // print(string.Join("",s));
-        
+
         Destroy(activeCustomers[key]);
         activeCustomers.Remove(key);
         leftAfterCompletion++;
-        
+
     }
 
     private void AdjustSpawnAndWaitTimes()
     {
         // Decrease customer wait time by 2 seconds (minimum 1 seconds)
-        customerWaitTime = Mathf.Max(2f, customerWaitTime - 1f);
+        customerWaitTime = Mathf.Max(2f, customerWaitTime - customerWaitTimeReductionPerInterval);
 
         // Decrease spawn interval by 5 seconds
-        spawnInterval -= 0.5f;
+        spawnInterval -= customerSpawnIntervalReduction;
 
         // Debug.Log($"Adjusted Times - Spawn Interval: {spawnInterval}, Customer Wait Time: {customerWaitTime}");
     }
